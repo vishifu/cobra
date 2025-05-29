@@ -1,0 +1,9 @@
+@use '@carbon/colors';
+
+.header--block {
+  background: colors.$black !important;
+}
+
+.header--block * {
+  color: colors.$white !important;
+}

@@ -1,0 +1,5 @@
+dependencies {
+    implementation 'com.opencsv:opencsv:5.10'
+
+    implementation project(':sample-model')
+}

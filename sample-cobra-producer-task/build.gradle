@@ -1,0 +1,24 @@
+dependencies {
+
+    implementation project(':sample-common')
+    implementation project(':sample-model')
+    implementation project(':cobra-core')
+
+    implementation libs.org.slf4j.log4j
+
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.cobra.sample.cobra.task.ProducerTask'
+        )
+    }
+
+    configurations.implementation.setCanBeResolved(true)
+    from {
+        configurations.implementation.collect {
+            f -> f.isDirectory() ? f : zipTree(f)
+        }
+    }
+}

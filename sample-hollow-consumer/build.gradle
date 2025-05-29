@@ -1,0 +1,17 @@
+plugins {
+    id('org.springframework.boot') version('3.4.1')
+    id('io.spring.dependency-management') version('1.1.7')
+}
+
+dependencies {
+    implementation(libs.springframework.boot.web.starter)
+    implementation(libs.springframework.boot.thymeleaf)
+    testImplementation(libs.springframework.boot.web.test)
+
+    implementation 'com.netflix.hollow:hollow:7.14.1'
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.781'
+    implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.12.781'
+
+    implementation project(':sample-model')
+    implementation project(':sample-common')
+}

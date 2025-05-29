@@ -1,0 +1,14 @@
+@use '@carbon/colors';
+@use '../../global';
+
+.nav {
+  border-right: 1px solid colors.$gray-20;
+}
+
+.nav-set a {
+  @extend .cds--side-nav__link;
+  text-decoration: none;
+  color: colors.$black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

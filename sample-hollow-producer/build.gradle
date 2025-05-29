@@ -1,0 +1,24 @@
+dependencies {
+    implementation 'com.netflix.hollow:hollow:7.14.1'
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.781'
+    implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.12.781'
+    implementation libs.org.slf4j.log4j
+
+    implementation project(':sample-model')
+    implementation project(':sample-common')
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.cobra.sample.hollow.producer.Producer'
+        )
+    }
+
+    configurations.implementation.setCanBeResolved(true)
+    from {
+        configurations.implementation.collect {
+            f -> f.isDirectory() ? f : zipTree(f)
+        }
+    }
+}
