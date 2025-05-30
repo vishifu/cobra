@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class CacheService {
-    private static final String host = "16.78.220.200";
+    private static final String host = "host.docker.internal";
     private static final int port = 7070;
     private static final String consumePath = "./misc/consume-dir";
 
