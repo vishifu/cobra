@@ -40,3 +40,20 @@ Sequence diagram
     - Apply pull-based model for checking new version of dataset.
 
 - SLAB algorithm: use slab to allocate/free memory.
+
+# Sample
+
+- Required have docker in computer.
+- `docker-build.sh` is script for build docker images.
+
+- Run `./docker-build.sh` will create 2 images `cobra-producer`, `cobra-consumer`.
+
+- Run `./docker-setup-test.sh start` will run 2 container for 2 images
+
+    - `producer-0` container is run on port 8080, open `http://localhost:8080/mutations` to practice with producer.
+
+    - We have some csv file for sample dataset in folder `tools/dataset/` in source code, upload some files and click `Apply Mutations` for data changes.
+
+    - Open `http://localhost:9000/find` to query movie by id. This is sample consumer.
+
+- To stop tests, run `./docker-setup-test.sh stop`
